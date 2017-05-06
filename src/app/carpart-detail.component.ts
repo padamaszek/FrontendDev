@@ -7,16 +7,7 @@ import { CarpartService } from './carpart.service';
 
 @Component({
   selector: 'carpart-detail',
-  template: `
-    <div *ngIf="carpart">
-      <h2>{{carpart.name}} details!</h2>
-      <div><label>id: </label>{{carpart.id}}</div>
-      <div>
-        <label>name: </label>
-        <input [(ngModel)]="carpart.name" placeholder="name"/>
-      </div>
-    </div>
-  `
+  templateUrl: './carpart-detail.component.html',
 })
 export class CarpartDetailComponent implements OnInit {
   @Input() carpart: Carpart;
@@ -31,5 +22,9 @@ ngOnInit(): void {
   this.route.params
     .switchMap((params: Params) => this.carpartService.getCarpart(+params['id']))
     .subscribe(carpart => this.carpart = carpart);
+}
+
+goBack(): void {
+  this.location.back();
 }
 }

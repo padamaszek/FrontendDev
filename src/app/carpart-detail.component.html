@@ -1,0 +1,10 @@
+<div *ngIf="carpart">
+  <h2>{{carpart.name}} details!</h2>
+  <div>
+    <label>id: </label>{{carpart.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="carpart.name" placeholder="name" />
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>
