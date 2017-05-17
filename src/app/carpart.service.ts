@@ -20,12 +20,40 @@ constructor(private http: Http) { }
   }
 
   getCarpart(id: number): Promise<Carpart> {
-  return this.getCarparts()
-             .then(carparts => carparts.find(carpart => carpart.id === id));
+  const url = `${this.carpartsUrl}/${id}`;
+  return this.http.get(url)
+    .toPromise()
+    .then(response => response.json().data as Carpart)
+    .catch(this.handleError);
+}
+
+update(carpart: Carpart): Promise<Carpart> {
+  const url = `${this.carpartsUrl}/${carpart.id}`;
+  return this.http
+    .put(url, JSON.stringify(carpart), {headers: this.headers})
+    .toPromise()
+    .then(() => carpart)
+    .catch(this.handleError);
+}
+
+create(name: string): Promise<Carpart> {
+  return this.http
+    .post(this.carpartsUrl, JSON.stringify({name: name}), {headers: this.headers})
+    .toPromise()
+    .then(res => res.json().data as Carpart)
+    .catch(this.handleError);
+}
+
+delete(id: number): Promise<void> {
+  const url = `${this.carpartsUrl}/${id}`;
+  return this.http.delete(url, {headers: this.headers})
+    .toPromise()
+    .then(() => null)
+    .catch(this.handleError);
 }
 
  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
+    console.error('An error occurred', error);
     return Promise.reject(error.message || error);
   }
 

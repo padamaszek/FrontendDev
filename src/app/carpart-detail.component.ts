@@ -27,4 +27,10 @@ ngOnInit(): void {
 goBack(): void {
   this.location.back();
 }
+
+save(): void {
+  this.carpartService.update(this.carpart)
+    .then(() => this.goBack());
+}
+
 }

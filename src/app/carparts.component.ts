@@ -21,13 +21,35 @@ export class CarpartsComponent implements OnInit {
   getCarparts(): void {
     this.carpartService.getCarparts().then(carparts => this.carparts = carparts);
   }
+
   ngOnInit(): void {
     this.getCarparts();
   }
+
   onSelect(carpart: Carpart): void {
     this.selectedCarpart = carpart;
   }
+
   gotoDetail(): void {
   this.router.navigate(['/detail', this.selectedCarpart.id]);
+}
+
+add(name: string): void {
+  name = name.trim();
+  if (!name) { return; }
+  this.carpartService.create(name)
+    .then(carpart => {
+      this.carparts.push(carpart);
+      this.selectedCarpart = null;
+    });
+}
+
+delete(carpart: Carpart): void {
+  this.carpartService
+      .delete(carpart.id)
+      .then(() => {
+        this.carparts = this.carparts.filter(c => c !== carpart);
+        if (this.selectedCarpart === carpart) { this.selectedCarpart = null; }
+      });
 }
 }

@@ -1,9 +1,18 @@
 <h2>My Carparts</h2>
+<div>
+  <label>Hero name:</label> <input #heroName />
+  <button (click)="add(heroName.value); heroName.value=''">
+    Add
+  </button>
+</div>
 <ul class="carparts">
   <li *ngFor="let carpart of carparts"
     [class.selected]="carpart === selectedCarpart"
     (click)="onSelect(carpart)">
-    <span class="badge">{{carpart.id}}</span> {{carpart.name}}
+    <span class="badge">{{carpart.id}}</span>  
+    <span>{{carpart.name}}</span>
+    <button class="delete"
+      (click)="delete(carpart); $event.stopPropagation()">x</button>
   </li>
 </ul>
 <div *ngIf="selectedCarpart">
