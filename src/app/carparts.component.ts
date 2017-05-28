@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'my-carparts',
    templateUrl: './carparts.component.html',
-  styleUrls: [ './carparts.component.css' ]
+  styleUrls: [ './carparts.component.css' ],
   providers: [CarpartService]
 })
 export class CarpartsComponent implements OnInit {

@@ -14,6 +14,7 @@ import { DashboardComponent }   from './dashboard.component';
 import { CarpartsComponent }      from './carparts.component';
 import { CarpartDetailComponent }  from './carpart-detail.component';
 import { CarpartService }          from './carpart.service';
+import { CarpartSearchComponent }  from './carpart-search.component';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { CarpartService }          from './carpart.service';
     DashboardComponent,
     CarpartDetailComponent,
     CarpartsComponent,
+    CarpartSearchComponent
   ],
   providers: [ CarpartService ],
   bootstrap: [ AppComponent ]

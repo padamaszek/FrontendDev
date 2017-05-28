@@ -32,5 +32,4 @@ save(): void {
   this.carpartService.update(this.carpart)
     .then(() => this.goBack());
 }
-
 }

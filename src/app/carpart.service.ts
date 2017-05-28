@@ -9,6 +9,7 @@ import { CARPARTS } from './mock-carparts';
 
 export class CarpartService {
 private carpartsUrl = 'api/carparts';  // URL to web api
+private headers = new Headers({'Content-Type': 'application/json'});
 
 constructor(private http: Http) { }
 
