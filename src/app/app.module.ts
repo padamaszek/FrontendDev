@@ -14,7 +14,10 @@ import { DashboardComponent }   from './dashboard.component';
 import { CarpartsComponent }      from './carparts.component';
 import { CarpartDetailComponent }  from './carpart-detail.component';
 import { CarpartService }          from './carpart.service';
-import { CarpartSearchComponent }  from './carpart-search.component';
+
+import { EnginesComponent }      from './engines.component';
+import { EngineDetailComponent }  from './engine-detail.component';
+import { EngineService }          from './engine.service';
 
 @NgModule({
   imports: [
@@ -29,9 +32,10 @@ import { CarpartSearchComponent }  from './carpart-search.component';
     DashboardComponent,
     CarpartDetailComponent,
     CarpartsComponent,
-    CarpartSearchComponent
+    EngineDetailComponent,
+    EnginesComponent,
   ],
-  providers: [ CarpartService ],
+  providers: [ CarpartService, EngineService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

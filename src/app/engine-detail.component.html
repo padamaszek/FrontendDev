@@ -1,0 +1,11 @@
+<div *ngIf="engine">
+  <h2>{{engine.name}} details!</h2>
+  <div>
+    <label>id: </label>{{engine.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="engine.name" placeholder="name" />
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>

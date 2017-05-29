@@ -1,0 +1,23 @@
+<h2>My Engines</h2>
+<div>
+  <label>Engines name:</label> <input #engineName />
+  <button (click)="add(engineName.value); engineName.value=''">
+    Add
+  </button>
+</div>
+<ul class="engines">
+  <li *ngFor="let engine of engines"
+    [class.selected]="engine === selectedEngine"
+    (click)="onSelect(engine)">
+    <span class="badge">{{engine.id}}</span>  
+    <span>{{engine.name}}</span>
+    <button class="delete"
+      (click)="delete(engine); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+<div *ngIf="selectedEngine">
+  <h2>
+    {{selectedEngine.name | uppercase}} is my engine
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
