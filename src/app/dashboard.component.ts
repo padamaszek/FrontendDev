@@ -12,7 +12,7 @@ import { EngineService } from './engine.service';
 })
 export class DashboardComponent implements OnInit {
   carparts: Carpart[] = [];
-  engines: Engines[] = [];
+  engines: Engine[] = [];
 
   constructor(private carpartService: CarpartService,private engineService: EngineService) { }
 
