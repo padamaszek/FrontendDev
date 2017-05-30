@@ -1,6 +1,6 @@
-<h2>My Carparts</h2>
+<h2>My Turbochargers</h2>
 <div>
-  <label>Carparts name:</label> <input #carpartName />
+  <label>Turbochargers name:</label> <input #carpartName />
   <button (click)="add(carpartName.value); carpartName.value=''">
     Add
   </button>
@@ -17,7 +17,7 @@
 </ul>
 <div *ngIf="selectedCarpart">
   <h2>
-    {{selectedCarpart.name | uppercase}} is my carpart
+    {{selectedCarpart.name | uppercase}} is my Turbocharger
   </h2>
   <button (click)="gotoDetail()">View Details</button>
 </div>
