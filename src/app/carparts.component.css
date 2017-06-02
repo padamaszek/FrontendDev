@@ -1,3 +1,16 @@
+h2{
+  background-color: #ffa500;
+  color: #000;
+  text-align: center;
+  font-size: 30px;
+}
+label{
+  color: #ffa500;
+  font-style: italic;
+}
+input{
+  width: 194px;
+}
 .selected {
   background-color: #CFD8DC !important;
   color: white;
@@ -7,20 +20,23 @@
   list-style-type: none;
   padding: 0;
   width: 15em;
+  
 }
 .carparts li {
   cursor: pointer;
   position: relative;
   left: 0;
-  background-color: #EEE;
+  background-color: #ffa500;
+  color: #000;
   margin: .5em;
   padding: .3em 0;
   height: 1.6em;
+  width: 500px;
   border-radius: 4px;
 }
 .carparts li:hover {
-  color: #607D8B;
-  background-color: #DDD;
+  color: #ffa500;
+  background-color: #000;
   left: .1em;
 }
 .carparts li.selected:hover {
@@ -46,8 +62,10 @@
   border-radius: 4px 0 0 4px;
 }
 button {
+  width: 150px;
   font-family: Arial;
-  background-color: #eee;
+  background-color: #ffa500;
+  color: #000;
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
@@ -58,7 +76,7 @@ button.delete {
   float:right;
   margin-top: 2px;
   margin-right: .8em;
-  background-color: gray !important;
+  background-color: red !important;
   color:white;
 }
 button:hover {

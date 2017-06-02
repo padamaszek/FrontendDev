@@ -8,6 +8,7 @@ import { EngineService } from './engine.service';
 @Component({
   selector: 'engine-detail',
   templateUrl: './engine-detail.component.html',
+  styleUrls: [ './engine-detail.component.css' ]
 })
 export class EngineDetailComponent implements OnInit {
   @Input() engine: Engine;

@@ -1,26 +1,40 @@
+h2 {
+  text-align: center;
+  font-size: 30px;
+color: #ffa500;
+}
 label {
+  text-align: center;
   display: inline-block;
   width: 3em;
-  margin: .5em 0;
-  color: #607D8B;
+  margin-left: 40%;
+  margin-bottom: 10px;
+  color: #ffa500;
   font-weight: bold;
 }
 input {
   height: 2em;
+  width: 13em;
   font-size: 1em;
   padding-left: .4em;
 }
 button {
+  display: block;
+  width: 16em;
   margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 43%;
   font-family: Arial;
-  background-color: #eee;
+  background-color: #ffa500;
+  color: #000;
   border: none;
-  padding: 5px 10px;
+  padding: 15px 20px;
   border-radius: 4px;
   cursor: pointer; cursor: hand;
 }
 button:hover {
-  background-color: #cfd8dc;
+  background-color: #000;
+  color: #ffa500;
 }
 button:disabled {
   background-color: #eee;

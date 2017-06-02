@@ -31,7 +31,7 @@ export class EnginesComponent implements OnInit {
   }
 
   gotoDetail(): void {
-  this.router.navigate(['/detail', this.selectedEngine.id]);
+  this.router.navigate(['/engines/detail', this.selectedEngine.id]);
 }
 
 add(name: string): void {
@@ -48,7 +48,7 @@ delete(engine: Engine): void {
   this.carpartService
       .delete(engine.id)
       .then(() => {
-        this.engines = this.engines.filter(c => c !== engine);
+        this.engines = this.engines.filter(e => e !== engine);
         if (this.selectedEngine === engine) { this.selectedEngine = null; }
       });
 }

@@ -8,6 +8,7 @@ import { CarpartService } from './carpart.service';
 @Component({
   selector: 'carpart-detail',
   templateUrl: './carpart-detail.component.html',
+  styleUrls: [ './carpart-detail.component.css' ]
 })
 export class CarpartDetailComponent implements OnInit {
   @Input() carpart: Carpart;
